@@ -1,0 +1,22 @@
+{
+	"database": {
+		"host": "database",
+		"port": 3306,
+		"user": "root",
+		"password": "unbreakable",
+		"name": "TimberService"
+	},
+	"aes_key": "aesisgood",
+	"salt_size": 16,
+	"token_valid_time": 30,
+	"username": {
+		"min_size": 4,
+		"max_size": 20,
+		"allowed_chars": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_."
+	},
+	"password": {
+		"min_size": 8,
+		"max_size": 30,
+		"allowed_chars": "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()"
+	}
+}

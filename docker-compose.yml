@@ -1,0 +1,18 @@
+version: "2"
+services:
+  authenticator:
+    build: ./authenticator
+    links:
+      - database
+    environment:
+      WAIT_HOSTS: database:3306
+    ports:
+      - "5000:5000"
+
+  database:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: unbreakable
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d/:ro
