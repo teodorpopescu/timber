@@ -1,0 +1,29 @@
+version: "3"
+services:
+  backend:
+    image: tpopescu0710/timber-backend:latest
+    depends_on:
+      - database
+      - authenticator
+    environment:
+      - WAIT_HOSTS=database:3306, authenticator:5000
+    ports:
+      - "4000:4000"
+
+  authenticator:
+    image: tpopescu0710/timber-authenticator:latest
+    depends_on:
+      - database
+    environment:
+      - WAIT_HOSTS=database:3306
+    ports:
+      - "5000:5000"
+
+  database:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=unbreakable
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d/:ro
+
