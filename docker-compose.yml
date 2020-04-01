@@ -1,5 +1,15 @@
 version: "2"
 services:
+  backend:
+    build: ./backend
+    links:
+      - database
+      - authenticator
+    environment:
+      WAIT_HOSTS: database:3306, authenticator:5000
+    ports:
+      - "4000:4000"
+
   authenticator:
     build: ./authenticator
     links:

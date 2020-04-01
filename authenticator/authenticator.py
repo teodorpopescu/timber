@@ -204,9 +204,9 @@ def manage_user():
                 delete_user(username)
             else:
                 return Response(status=401, response="Bad username or password")
-            return "Success"
+            return Response(status=200, response="User deleted")
         else:
-            return "Invalid method"
+            return Response(status=500, response="Invalid method")
     except Exception as e:
         return Response(status=500, response=str(e))
 
