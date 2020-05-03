@@ -1,0 +1,4 @@
+{
+	"authenticator_endpoint": "authenticator:5000",
+	"backend_endpoint": "backend:4000"
+}

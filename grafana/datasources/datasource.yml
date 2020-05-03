@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: MySQL
+    type: mysql
+    url: database:3306
+    database: TimberService
+    user: root
+    password: unbreakable
+    isDefault: true
+    editable: true
